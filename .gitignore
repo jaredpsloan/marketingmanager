@@ -1,5 +1,5 @@
 # OS and editor droppings. This account works across two Windows laptops and a
-# Mac (see jaredpsloan/BOOTSTRAP.md), so both families can land in any repo -
+# Mac (see workstation/BOOTSTRAP.md), so both families can land in any repo -
 # .DS_Store from the Mac, Thumbs.db and desktop.ini from Windows. Whichever
 # machine commits first is the one that inflicts them on the other two.
 .DS_Store
