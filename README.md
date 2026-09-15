@@ -1,8 +1,8 @@
 # marketingmanager
 
-**Status:** empty — placeholder, no content yet.
+**Status:** empty, placeholder, no content yet.
 
-Placeholder repo — no code or plans have been committed yet. Reserved for
+Placeholder repo, no code or plans have been committed yet. Reserved for
 the marketing side of this account's projects, the way
 [agentmanager](https://github.com/jaredpsloan/agentmanager) owns the bots
 and [inframanager](https://github.com/jaredpsloan/inframanager) owns the
