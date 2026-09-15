@@ -1,0 +1,23 @@
+# OS and editor droppings. This account works across two Windows laptops and a
+# Mac (see jaredpsloan/BOOTSTRAP.md), so both families can land in any repo -
+# .DS_Store from the Mac, Thumbs.db and desktop.ini from Windows. Whichever
+# machine commits first is the one that inflicts them on the other two.
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# Editor scratch
+*.swp
+*~
+
+# Secrets: never commit these. Added in the 2026-09-10 audit, which found
+# several repos had no .env coverage at all.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
