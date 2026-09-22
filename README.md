@@ -1,12 +1,12 @@
 # marketingmanager
 
-**Status:** empty, placeholder, no content yet.
+**Status:** docs-only, one TODO tracked so far, no code or plans beyond it.
 
-Placeholder repo, no code or plans have been committed yet. Reserved for
-the marketing side of this account's projects, the way
+Reserved for the marketing side of this account's projects, the way
 [agentmanager](https://github.com/jaredpsloan/agentmanager) owns the bots
 and [inframanager](https://github.com/jaredpsloan/inframanager) owns the
-infrastructure.
+infrastructure. [TODO.md](TODO.md) tracks the human-only setup steps for
+the social-publish pipeline (Instagram/Facebook/TikTok/YouTube
+credentialing); the actual pipeline code lives in inframanager.
 
-This README will be updated once the scope is decided. It exists so the
-account's repo index has an honest row for this repo instead of a blank one.
+This README will be updated further once the scope is decided.
