@@ -4,3 +4,8 @@ updates:
     directory: /
     schedule:
       interval: weekly
+    ignore:
+      # Private repo - Dependabot can't reach it to check for updates, and
+      # this pin is bumped by hand anyway. Left unignored, it fails the
+      # whole job, blocking every other dependency's updates too.
+      - dependency-name: "jaredpsloan/inframanager/*"
