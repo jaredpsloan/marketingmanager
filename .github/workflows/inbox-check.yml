@@ -1,0 +1,26 @@
+name: Inbox contract
+
+# Every delivery into guides/_inbox/ is checked against the contract in
+# guides/_inbox/README.md, its sources probed, duplicates flagged, and the
+# checklist delivered as a PR comment or an "Inbox curation" issue. Bots push straight to main (direct-push policy,
+# 2026-09-17), so this runs on the push and goes red after the fact; the
+# Monday digest and the daily health monitor both pick that up. On a PR it
+# blocks. The rules and their tests live in inframanager
+# (scripts/inbox-check.py); this file only calls them.
+
+on:
+  push:
+    branches: [main, master]
+    paths: ["guides/_inbox/**"]
+  pull_request:
+    paths: ["guides/_inbox/**"]
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+  pull-requests: write   # the curator's sticky checklist comment and labels
+  issues: write          # the sticky "Inbox curation" issue after a direct push
+
+jobs:
+  check:
+    uses: jaredpsloan/inframanager/.github/workflows/inbox-check.yml@6235c3aadbef9c8cdb1e07521d9d00fec719e705  # main @ 2026-09-22

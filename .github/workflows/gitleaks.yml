@@ -1,0 +1,32 @@
+name: Secret scan
+
+# gitleaks over the full history on every push and PR. Exists because a
+# token once landed in the wrong GitHub secret in this account; a token in
+# a commit would be worse, and this is the check that says so before it is
+# pushed anywhere public. No license key needed for a personal account.
+
+on:
+  push:
+  pull_request:
+  schedule:
+    - cron: "17 6 * * 1"
+
+permissions:
+  contents: read
+  pull-requests: read
+
+jobs:
+  gitleaks:
+    # Dependabot's PR token cannot read the PR through the API, which the
+    # action needs on pull_request events; the push to main scans the same
+    # commits once merged.
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1  # v7.0.1
+        with:
+          fetch-depth: 0
+      - uses: gitleaks/gitleaks-action@e0c47f4f8be36e29cdc102c57e68cb5cbf0e8d1e  # v3.0.0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
